@@ -89,7 +89,6 @@ body.dark .nav-element{
   height: 25px;
   position: absolute;
   background: #F1F1F1;
-  /* top: 0; */
   left: 0;
   right: unset;
   border-radius: 100px;
@@ -233,26 +232,20 @@ body.dark .characters-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid red;
   height: calc(100vh - 100px);
 }
-
-/* .error404-container {
-  width: 100%;
-  height: 100%;
-} */
 
 body.dark .error404{
   color: #FFF;
 }
 
 .error404 img {
-  max-width: 100%;
+  max-width: 80%;
   margin: 0 auto;
 }
 
 .error404 h2 {
-  padding-top: 2em;
+  padding: .5em 0 .5em;
   text-align: center;
 }
 
