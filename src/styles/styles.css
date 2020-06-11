@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-ligth: #f4f4f4;
+  --background-dark: #2B4162;
+  --second-color-dark: #385f71;
+}
+
+body {
+  background-color: var(--background-ligth);
+  color: #3c484e;
+  font-family: 'Open Sans', sans-serif;
+  transition: 1s ease all;
+}
+
+body.dark {
+  background-color: var(--background-dark);
+}
+
+/* HEADER */
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  max-width: inherit;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1em;
+  position: fixed;
+  background-color: var(--background-ligth);
+  transition: 1s ease all;
+}
+
+body.dark .header-main {
+  background-color: var(--background-dark);
+}
+
+.header-logo img {
+  height: 50px;
+}
+
+.header a {
+  text-decoration: none;
+  color: #15302C;
+  font-weight: 700;
+}
+
+.header a.dark {
+  color: #fff;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+body.dark .nav-element{
+  color: #FFF;
+}
+
+.switch {
+  background: #343D5B;
+  border-radius: 1000px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  outline: none;
+  margin-left: 1.5em;
+  border: 3px solid rgba(0, 0, 0, 0.3);
+}
+
+.switch::after {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  background: #F1F1F1;
+  /* top: 0; */
+  left: 0;
+  right: unset;
+  border-radius: 100px;
+  transition: 1s ease all;
+  box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.2);
+}
+
+.switch.active {
+  background: orange;
+  color: #000;
+}
+
+.switch.active::after {
+  left: unset;
+  right: 0;
+}
+
+.switch span {
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  display: block;
+  background: none;
+  color: #FFF;
+}
+
+/* MAIN SECTION */
+.main {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 1em;
+  display: flex;
+  justify-content: center;
+}
+
+#content {
+  padding-top: 100px;
+}
+
+/* CHARACTERS LIST */
+.characters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.5rem;
+  justify-content: center;
+}
+
+.characters-item {
+  text-decoration: none;
+  box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
+  border-radius: 5px;
+  margin: 0 0 20px 0;
+  display: block;
+  animation-duration: 2s;
+  animation-name: fade;
+  transition: .3s ease all;
+}
+
+body.dark .characters-item {
+  background: var(--second-color-dark);
+}
+
+.characters-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px 5px 0 0;
+}
+
+.characters-item h2 {
+  font-size: 18px;
+  font-weight: 300;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.characters-item a {
+  text-decoration: none;
+  color: #026C86;
+}
+
+body.dark .character-name {
+  color: #FFF;
+}
+
+/* CHARACTER CARD */
+.characters-inner {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 1.5rem;
+}
+
+.characters-card {
+  text-decoration: none;
+  box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
+  border-radius: 5px;
+  animation-duration: 1s;
+  animation-name: fade;
+}
+
+body.dark .characters-card {
+  background: var(--second-color-dark);
+}
+
+
+body.dark .characters-card {
+  color: #FFF;
+}
+
+.characters-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px 5px 0 0;
+}
+
+.characters-card h2 {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.characters-card h3 {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: left;
+  margin: 20px;
+}
+
+.main-loading {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+}
+
+/* ERROR 404 */
+.error404 {
+  display: grid;
+  justify-content: center;
+}
+
+body.dark .error404{
+  color: #FFF;
+}
+
+.error404 img {
+  max-width: 100%;
+}
+
+.error404 h2 {
+  padding: 1em 0;
+  text-align: center;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media screen and (max-width: 450px) {
+  .characters {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 310px) {
+  .characters {
+    grid-template-columns: 1fr;
+  }
+}
